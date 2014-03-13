@@ -9,7 +9,7 @@ package problems
 
 import "math/big"
 
-func sumDigits(n *big.Int) int {
+func sumBigDigits(n *big.Int) int {
 	mod, sum, zero := big.NewInt(0), big.NewInt(0), big.NewInt(0)
 	ten := big.NewInt(10)
 	for n.Cmp(zero) != 0 {
@@ -21,5 +21,5 @@ func sumDigits(n *big.Int) int {
 
 func Euler016() int {
 	num := big.NewInt(0).Exp(big.NewInt(2), big.NewInt(1000), nil)
-	return sumDigits(num)
+	return sumBigDigits(num)
 }

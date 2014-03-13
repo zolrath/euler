@@ -7,22 +7,9 @@ Answer: 906609
 
 package problems
 
-func isPalindromeString(text string) bool {
-	return text == reverseString(text)
-}
-
 func isPalindromeInt(num int) bool {
 	return num == reverseInt(num)
 }
-
-func reverseString(s string) string {
-	runes := []rune(s)
-	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
-		runes[i], runes[j] = runes[j], runes[i]
-	}
-	return string(runes)
-}
-
 func reverseInt(num int) (reverse int) {
 	for num > 0 {
 		lastDigit := num % 10
@@ -45,3 +32,17 @@ func Euler004() int {
 	}
 	return min
 }
+
+/*
+   func isPalindromeString(text string) bool {
+   	return text == reverseString(text)
+   }
+
+   func reverseString(s string) string {
+   	runes := []rune(s)
+   	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
+   		runes[i], runes[j] = runes[j], runes[i]
+   	}
+   	return string(runes)
+   }
+*/

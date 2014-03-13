@@ -33,6 +33,18 @@ func main() {
 	problemList[18] = problems.Euler018
 	problemList[19] = problems.Euler019
 	problemList[20] = problems.Euler020
+	problemList[21] = problems.Euler021
+	problemList[22] = problems.Euler022
+	problemList[23] = problems.Euler023
+	problemList[24] = problems.Euler024
+	problemList[25] = problems.Euler025
+	problemList[26] = problems.Euler026
+	problemList[27] = problems.Euler027
+	problemList[28] = problems.Euler028
+	problemList[29] = problems.Euler029
+	problemList[30] = problems.Euler030
+	problemList[31] = problems.Euler031
+	problemList[32] = problems.Euler032
 
 	if *pFlag != 0 {
 		fmt.Printf("Problem %03d: %d\n", *pFlag, problemList[*pFlag]())

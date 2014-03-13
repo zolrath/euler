@@ -19,10 +19,10 @@ func factorialInt(num int64) *big.Int {
 	return result
 }
 
-// Uses sumDigits from 016.go
+// Uses sumBigDigits from 016.go
 // TODO: Move reused/duplicated functions into util.
 
 func Euler020() int {
-	sum := sumDigits(factorialInt(100))
+	sum := sumBigDigits(factorialInt(100))
 	return sum
 }
