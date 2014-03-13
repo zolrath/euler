@@ -27,3 +27,8 @@ func BenchmarkEuler012(b *testing.B) { benchmarkHarness(problems.Euler012, b) }
 func BenchmarkEuler013(b *testing.B) { benchmarkHarness(problems.Euler013, b) }
 func BenchmarkEuler014(b *testing.B) { benchmarkHarness(problems.Euler014, b) }
 func BenchmarkEuler015(b *testing.B) { benchmarkHarness(problems.Euler015, b) }
+func BenchmarkEuler016(b *testing.B) { benchmarkHarness(problems.Euler016, b) }
+func BenchmarkEuler017(b *testing.B) { benchmarkHarness(problems.Euler017, b) }
+func BenchmarkEuler018(b *testing.B) { benchmarkHarness(problems.Euler018, b) }
+func BenchmarkEuler019(b *testing.B) { benchmarkHarness(problems.Euler019, b) }
+func BenchmarkEuler020(b *testing.B) { benchmarkHarness(problems.Euler020, b) }
