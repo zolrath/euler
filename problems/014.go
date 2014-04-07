@@ -14,16 +14,9 @@ Answer: 837799
 
 package problems
 
-// Map for memoization
-var collatzMap map[int]int
-
 func collatz(n int) int {
 	cycles := 1
 	for i := n; i != 1; {
-		if collatzMap[i] != 0 {
-			cycles += collatzMap[i]
-			break
-		}
 		switch i%2 == 0 {
 		case true:
 			i = i / 2
@@ -33,12 +26,10 @@ func collatz(n int) int {
 			cycles++
 		}
 	}
-	collatzMap[n] = cycles
 	return cycles
 }
 
 func Euler014() int {
-	collatzMap = map[int]int{}
 	longestChain := 0
 	longestChainNum := 0
 	for i := 1; i < 1000000; i++ {
