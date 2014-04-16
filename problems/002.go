@@ -8,6 +8,8 @@ Answer: 4613732
 
 package problems
 
+const ANSWER_002 = 4613732
+
 func Euler002() int {
 	sum := 0
 	for a, b := 1, 2; b < 4000000; {

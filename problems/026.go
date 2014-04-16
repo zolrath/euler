@@ -18,6 +18,8 @@ Find the value of d < 1000 for which 1/d contains the longest recurring cycle in
 
 package problems
 
+const ANSWER_026 = 983
+
 func findCyclicCount(n int) int {
 	rmap := map[int]int{}
 	count := 0

@@ -17,6 +17,8 @@ Answer: 669171001
 
 package problems
 
+const ANSWER_028 = 669171001
+
 func diagonalCount(n int) int {
 	total := 1
 	for i := 3; i <= n; i += 2 {

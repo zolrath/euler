@@ -3,12 +3,14 @@ package main
 import (
 	"flag"
 	"fmt"
+	"runtime"
 	"sort"
 
 	"github.com/zolrath/euler/problems"
 )
 
 func main() {
+	runtime.GOMAXPROCS(runtime.NumCPU())
 	var pFlag = flag.Int("p", 0, "Run a specific problem.")
 	flag.Parse()
 
@@ -22,6 +24,7 @@ func main() {
 	problemList[7] = problems.Euler007
 	problemList[8] = problems.Euler008
 	problemList[9] = problems.Euler009
+
 	problemList[10] = problems.Euler010
 	problemList[11] = problems.Euler011
 	problemList[12] = problems.Euler012
@@ -32,6 +35,7 @@ func main() {
 	problemList[17] = problems.Euler017
 	problemList[18] = problems.Euler018
 	problemList[19] = problems.Euler019
+
 	problemList[20] = problems.Euler020
 	problemList[21] = problems.Euler021
 	problemList[22] = problems.Euler022
@@ -42,20 +46,29 @@ func main() {
 	problemList[27] = problems.Euler027
 	problemList[28] = problems.Euler028
 	problemList[29] = problems.Euler029
+
 	problemList[30] = problems.Euler030
 	problemList[31] = problems.Euler031
 	problemList[32] = problems.Euler032
+	problemList[33] = problems.Euler033
+	problemList[34] = problems.Euler034
+	problemList[35] = problems.Euler035
 
 	if *pFlag != 0 {
+		if _, ok := problemList[*pFlag]; !ok {
+			fmt.Printf("Problem %03d hasn't been completed yet don'tcha know!\n", *pFlag)
+			return
+		}
 		fmt.Printf("Problem %03d: %d\n", *pFlag, problemList[*pFlag]())
 	} else {
-		problemKeys := []int{}
+		problemKeys := make([]int, 0, len(problemList))
 		for k, _ := range problemList {
 			problemKeys = append(problemKeys, k)
 		}
 		sort.Ints(problemKeys)
 		for _, v := range problemKeys {
-			fmt.Printf("Problem %03d: %d\n", v, problemList[v]())
+			answer := problemList[v]()
+			fmt.Printf("Problem %03d: %d\n", v, answer)
 		}
 	}
 }

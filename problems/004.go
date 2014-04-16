@@ -7,16 +7,12 @@ Answer: 906609
 
 package problems
 
+import "github.com/zolrath/euler/util/sink"
+
+const ANSWER_004 = 906609
+
 func isPalindromeInt(num int) bool {
-	return num == reverseInt(num)
-}
-func reverseInt(num int) (reverse int) {
-	for num > 0 {
-		lastDigit := num % 10
-		reverse = reverse*10 + lastDigit
-		num = num / 10
-	}
-	return reverse
+	return num == sink.ReverseInt(num)
 }
 
 func Euler004() int {

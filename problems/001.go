@@ -8,6 +8,8 @@ Answer: 233168
 
 package problems
 
+const ANSWER_001 = 233168
+
 func Euler001() int {
 	sum := 0
 	for i := 1; i < 1000; i++ {

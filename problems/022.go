@@ -19,6 +19,8 @@ import (
 	"strings"
 )
 
+const ANSWER_022 = 871198282
+
 var names []string
 
 func newNameList() []string {

@@ -11,6 +11,8 @@ package problems
 
 import "math/big"
 
+const ANSWER_020 = 648
+
 func factorialInt(num int64) *big.Int {
 	n, one, result := big.NewInt(num), big.NewInt(1), big.NewInt(1)
 	for i := big.NewInt(2); i.Cmp(n) != 1; i = i.Add(i, one) {

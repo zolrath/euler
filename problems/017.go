@@ -9,6 +9,8 @@ Answer: 21124
 
 package problems
 
+const ANSWER_017 = 21124
+
 var onesCount, tensCount []int
 
 func numLetterCount(n int) int {

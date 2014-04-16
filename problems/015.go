@@ -8,6 +8,8 @@ Answer: 137846528820
 
 package problems
 
+const ANSWER_015 = 137846528820
+
 func factorial(n float64) float64 {
 	result := float64(1)
 	for i := float64(2); i <= n; i++ {

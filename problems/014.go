@@ -14,6 +14,8 @@ Answer: 837799
 
 package problems
 
+const ANSWER_014 = 837799
+
 func collatz(n int) int {
 	cycles := 1
 	for i := n; i != 1; {

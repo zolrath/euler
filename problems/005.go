@@ -7,28 +7,18 @@ Answer: 232792560
 
 package problems
 
-func gcd(a, b int) int {
-	if a < b {
-		a, b = b, a
-	}
-	if a%b == 0 {
-		return b
-	}
-	return gcd(b, a%b)
-}
+import "github.com/zolrath/euler/util/sink"
 
-func lcm(a, b int) int {
-	return a * b / gcd(a, b)
-}
+const ANSWER_005 = 232792560
 
-func multilcm(nums []int) int {
+func multiLCM(nums []int) int {
 	m := nums[0]
 	for i := 1; i < len(nums)-1; i++ {
-		m = lcm(m, nums[i])
+		m = sink.LCM(m, nums[i])
 	}
 	return m
 }
 
 func Euler005() int {
-	return multilcm([]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20})
+	return multiLCM([]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20})
 }

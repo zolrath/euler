@@ -11,26 +11,36 @@ Answer: 25164150
 
 package problems
 
+const ANSWER_006 = 25164150
+
 func square(n int) int {
 	return n * n
 }
 
-func sumOfSquares(max int) int {
-	var total int
-	for i := 1; i <= max; i++ {
-		total += square(i)
-	}
-	return total
+func sumOfSquares(n int) int {
+	return n * (n + 1) * (2*n + 1) / 6
 }
 
-func squareOfSum(max int) int {
-	var total int
-	for i := 1; i <= max; i++ {
-		total += i
-	}
-	return square(total)
+func sumOfSeq(n int) int {
+	return n * (n + 1) / 2
 }
 
 func Euler006() int {
-	return squareOfSum(100) - sumOfSquares(100)
+	return square(sumOfSeq(100)) - sumOfSquares(100)
 }
+
+// func sumOfSquares(max int) int {
+// 	var total int
+// 	for i := 1; i <= max; i++ {
+// 		total += square(i)
+// 	}
+// 	return total
+// }
+
+// func squareOfSum(max int) int {
+// 	var total int
+// 	for i := 1; i <= max; i++ {
+// 		total += i
+// 	}
+// 	return square(total)
+// }

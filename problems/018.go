@@ -12,6 +12,8 @@ Answer: 1074
 
 package problems
 
+const ANSWER_018 = 1074
+
 func max(a, b int) int {
 	if a > b {
 		return a

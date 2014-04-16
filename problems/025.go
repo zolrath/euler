@@ -17,26 +17,21 @@ F11 = 89
 F12 = 144
 The 12th term, F12, is the first term to contain three digits.
 What is the first term in the Fibonacci sequence to contain 1000 digits?
-Answer:4782
+Answer: 4782
 */
 
 package problems
 
-import "math/big"
+import (
+	"math/big"
 
-func bigIntFibonacci() func() *big.Int {
-	a, b, ans, tmp := big.NewInt(0), big.NewInt(1), big.NewInt(0), big.NewInt(0)
-	return func() *big.Int {
-		tmp.Set(b)
-		ans.Set(a)
-		b.Add(a, b)
-		a.Set(tmp)
-		return ans
-	}
-}
+	"github.com/zolrath/euler/util/fibonacci"
+)
+
+const ANSWER_025 = 4782
 
 func Euler025() int {
-	fib := bigIntFibonacci()
+	fib := fibonacci.BigIntGenerator()
 	var num *big.Int
 	for i := 0; ; i++ {
 		num = fib()
@@ -46,3 +41,14 @@ func Euler025() int {
 	}
 	return -1
 }
+
+// func bigIntFibonacci() func() *big.Int {
+// 	a, b, ans, tmp := big.NewInt(0), big.NewInt(1), big.NewInt(0), big.NewInt(0)
+// 	return func() *big.Int {
+// 		tmp.Set(b)
+// 		ans.Set(a)
+// 		b.Add(a, b)
+// 		a.Set(tmp)
+// 		return ans
+// 	}
+// }

@@ -17,14 +17,22 @@ Answer: 4179871
 
 package problems
 
+import (
+	"runtime"
+	"sync"
+
+	"github.com/zolrath/euler/util/sink"
+)
+
+const ANSWER_023 = 4179871
+
 func isAbundant(n int) bool {
-	// properDivisorSum comes from 021.go
-	// TODO: Move into util.
-	return n < properDivisorSum(n)
+	return n < sink.ProperDivisorSum(n)
 }
 
 func Euler023() int {
 	// Generate list of abundant numbers < 20162
+	runtime.GOMAXPROCS(runtime.NumCPU())
 	abundantList := []int{}
 	for i := 1; i < 20162; i++ {
 		if isAbundant(i) {
@@ -35,14 +43,23 @@ func Euler023() int {
 	// Generate all combinations of abundant sums.
 	l := len(abundantList)
 	abundantSums := [20162]bool{}
+
+	// Lets try WaitGroups for this one.
+	var wg sync.WaitGroup
 	for i := 0; i < l; i++ {
-		for j := i; j < l; j++ {
-			sum := abundantList[i] + abundantList[j]
-			if sum < 20162 {
-				abundantSums[sum] = true
+		wg.Add(1)
+		go func(n int) {
+			defer wg.Done()
+			for j := n; j < l; j++ {
+				sum := abundantList[n] + abundantList[j]
+				if sum < 20162 {
+					abundantSums[sum] = true
+				}
 			}
-		}
+		}(i)
 	}
+
+	wg.Wait()
 
 	// Find all numbers which aren't on the abundant sum list.
 	total := 0

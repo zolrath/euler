@@ -7,26 +7,10 @@ Answer: 104743
 
 package problems
 
-import "math"
+import "github.com/zolrath/euler/util/primes"
 
-func nthPrime(n int) int {
-	primes := []int{2}
-Primesearch:
-	for i := 3; len(primes) < n; i += 2 {
-		sqrt := int(math.Sqrt(float64(i)))
-		for _, v := range primes {
-			switch {
-			case v > sqrt:
-				break
-			case i%v == 0:
-				continue Primesearch
-			}
-		}
-		primes = append(primes, i)
-	}
-	return primes[n-1]
-}
+const ANSWER_007 = 104743
 
 func Euler007() int {
-	return nthPrime(10001)
+	return primes.Nth(10001)
 }

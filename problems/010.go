@@ -7,26 +7,15 @@ Answer: 142913828922
 
 package problems
 
-import "math"
+import "github.com/zolrath/euler/util/primes"
 
-func simpleSieveSum(limit int) int {
-	sieve := make([]int, limit+1)
-	sum := 0
-	for i := 2; i <= int(math.Sqrt(float64(limit))); i++ {
-		if sieve[i] == 0 {
-			for j := i * i; j <= limit; j += i {
-				sieve[j] = 1
-			}
-		}
-	}
-	for i := 2; i <= limit; i++ {
-		if sieve[i] == 0 {
-			sum += i
-		}
-	}
-	return sum
-}
+const ANSWER_010 = 142913828922
 
 func Euler010() int {
-	return simpleSieveSum(2000000)
+	sum := 0
+	p := primes.Sieve(2000000)
+	for _, v := range p {
+		sum += v
+	}
+	return sum
 }

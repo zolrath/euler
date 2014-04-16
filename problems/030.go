@@ -16,6 +16,8 @@ package problems
 
 import "math"
 
+const ANSWER_030 = 443839
+
 func sumPowDigits(n int) int {
 	mod, sum := 0, 0
 	for n > 0 {

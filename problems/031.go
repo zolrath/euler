@@ -19,6 +19,8 @@ package problems
 // Hn = 1p+2n+5p+10p+20p+50p+100p+200p
 // MY WORD ENGLAND, GET IT TOGETHER OL CHAP
 
+const ANSWER_031 = 73682
+
 func Euler031() int {
 	britCash := []int{1, 2, 5, 10, 20, 50, 100, 200}
 	combinations := [201]int{1}

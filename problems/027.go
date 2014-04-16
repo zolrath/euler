@@ -22,20 +22,15 @@ Answer: -59231
 
 package problems
 
-var primes []int
+import "github.com/zolrath/euler/util/primes"
 
-func isPrime(n int) bool {
-	for _, v := range primes {
-		if n == v {
-			return true
-		}
-	}
-	return false
-}
+const ANSWER_027 = -59231
+
+var primesl map[int]bool
 
 func quadForm(a, b int) int {
 	for n := 0; ; n++ {
-		if isPrime((n*n)+a*n+b) != true {
+		if primes.IsPrime((n*n)+a*n+b, primesl) != true {
 			return n
 		}
 	}
@@ -43,7 +38,7 @@ func quadForm(a, b int) int {
 
 func Euler027() int {
 	high, topa, topb := 0, 0, 0
-	primes = simpleSieve(1000)
+	primesl = primes.SieveMap(1000)
 	for a := -100; a < 1000; a++ {
 		for b := 0; b < 1000; b++ {
 			ps := quadForm(a, b)

@@ -9,6 +9,8 @@ package problems
 
 import "strconv"
 
+const ANSWER_013 = 5537376230
+
 // This isn't reaaally how I'd like to do this as it's using language features
 // to skip over the challenging aspect of the problem.
 func Euler013() int {

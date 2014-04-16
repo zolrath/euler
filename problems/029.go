@@ -15,6 +15,8 @@ package problems
 
 import "math/big"
 
+const ANSWER_029 = 9183
+
 func getPowers(n int64) map[string]bool {
 	powers := map[string]bool{}
 	limit := big.NewInt(n)

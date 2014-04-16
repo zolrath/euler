@@ -10,32 +10,62 @@ Answer: 31626
 
 package problems
 
-func properDivisorSum(n int) int {
-	divisorSum := 0
-	for i := 1; i < n; i++ {
-		if n%i == 0 {
-			divisorSum += i
-		}
-	}
-	return divisorSum
-}
+import (
+	"runtime"
+
+	"github.com/zolrath/euler/util/sink"
+)
+
+const ANSWER_021 = 31626
 
 func isAmicable(a int) bool {
-	b := properDivisorSum(a)
-	s := properDivisorSum(b)
-	return a != b && a == s
+	b := sink.ProperDivisorSum(a)
+	if a == b || b <= 0 {
+		return false
+	}
+	s := sink.ProperDivisorSum(b)
+	return a == s
 }
 
 func sumAmicable(n int) int {
+	results := make(chan int)
 	sum := 0
+
 	for i := 1; i < n; i++ {
-		if isAmicable(i) {
-			sum += i
-		}
+		// Parallelize it, heyo.
+		go func(n int) {
+			if isAmicable(n) {
+				results <- n
+			} else {
+				results <- 0
+			}
+		}(i)
 	}
+
+	// Collect results.
+	for i := 1; i < n; i++ {
+		sum += <-results
+	}
+
 	return sum
 }
 
 func Euler021() int {
+	runtime.GOMAXPROCS(runtime.NumCPU())
 	return sumAmicable(10000)
 }
+
+// Prime Factorization to the rescue!
+// σ(n) is the sum of divisors of a natural number.
+// σ(p^a) = (p^a+1 − 1)/(p − 1).
+// Get prime factorization of number,
+
+// func properDivisorSum(n int) int {
+// 	factors := primes.PrimeFactors(n)
+
+// 	sum := 1
+// 	for p, e := range factors {
+// 		sum *= (int(math.Pow(float64(p), float64(e+1))) - 1) / (p - 1)
+// 	}
+// 	return sum - n
+// }

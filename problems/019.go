@@ -17,6 +17,8 @@ package problems
 
 import "time"
 
+const ANSWER_019 = 171
+
 func Euler019() int {
 	// monthDays := []int{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}
 	// This method is a bit too easy/slow.

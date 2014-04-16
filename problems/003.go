@@ -7,10 +7,16 @@ Answer: 6857
 
 package problems
 
+const ANSWER_003 = 6857
+
 func Euler003() int {
 	var n, fac int
 	n = 600851475143
-	for i := 2; i <= n; i++ {
+	for n%2 == 0 {
+		fac = 2
+		n = n / fac
+	}
+	for i := 3; i <= n; i += 2 {
 		for n%i == 0 {
 			fac = i
 			n = n / fac

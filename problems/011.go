@@ -28,6 +28,8 @@ Answer: 70600674
 
 package problems
 
+const ANSWER_011 = 70600674
+
 var (
 	// Global Variables. Gross.
 	grid     [][]int
