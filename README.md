@@ -23,7 +23,7 @@ This time [wheat779](https://github.com/wheat779) and I shall battle to the **bo
 | [009][E009]     | [      166712 ns][G009] | [          ? ns][W009] |
 | [010][E010]     | [   49_120659 ns][G010] | [          ? ns][W010] |
 | [011][E011]     | [       15383 ns][G011] | [          ? ns][W011] |
-| [012][E012]     | [  742_403423 ns][G012] |                        |
+| [012][E012]     | [  516_877686 ns][G012] |                        |
 | [013][E013]     | [        1034 ns][G013] |                        |
 | [014][E014]     | [  611_661311 ns][G014] |                        |
 | [015][E015]     | [         144 ns][G015] |                        |
@@ -44,13 +44,13 @@ This time [wheat779](https://github.com/wheat779) and I shall battle to the **bo
 | [029][E029]     | [   21_234962 ns][G029] |                        |
 | [030][E030]     | [   97_401449 ns][G030] |                        |
 | [031][E031]     | [        1958 ns][G031] |                        |
-| [032][E032]     | [   32_471335 ns][G032] |                        |
+| [032][E032]     | [   19_797428 ns][G032] |                        |
 | [033][E033]     | [      899968 ns][G033] |                        |
 | [034][E034]     | [   10_195825 ns][G034] |                        |
 | [035][E035]     | [  111_228697 ns][G035] |                        |
 | [036][E036]     | [   35_503199 ns][G036] |                        |
 | [037][E037]     | [   90_107000 ns][G037] |                        |
-| [038][E038]     | [      357653 ns][G038] |                        |
+| [038][E038]     | [      278589 ns][G038] |                        |
 | [039][E039]     | [   70_786829 ns][G039] |                        |
 | [040][E040]     | [   43_780372 ns][G040] |                        |
 |   **Problem**   |       **Go Time**       |     **Wheat Time**     |
@@ -65,6 +65,10 @@ This time [wheat779](https://github.com/wheat779) and I shall battle to the **bo
 | [049][E049]     | [    6_131664 ns][G049] |                        |
 | [050][E050]     | [   78_783501 ns][G050] |                        |
 | [051][E051]     | [   69_399747 ns][G051] |                        |
+| [052][E052]     | [   34_614770 ns][G052] |                        |
+| [053][E053]     | [    1_198651 ns][G053] |                        |
+| [055][E055]     | [    3_792933 ns][G055] |                        |
+| [056][E056]     | [  166_651887 ns][G056] |                        |
 
 [G001]: /problems/001.go "Go Solution Source"
 [G002]: /problems/002.go "Go Solution Source"
@@ -117,6 +121,10 @@ This time [wheat779](https://github.com/wheat779) and I shall battle to the **bo
 [G049]: /problems/049.go "Go Solution Source"
 [G050]: /problems/050.go "Go Solution Source"
 [G051]: /problems/051.go "Go Solution Source"
+[G052]: /problems/052.go "Go Solution Source"
+[G053]: /problems/053.go "Go Solution Source"
+[G055]: /problems/055.go "Go Solution Source"
+[G056]: /problems/056.go "Go Solution Source"
 
 [W003]: https://github.com/wheat779/Project-Euler/blob/master/03.cpp "wheat779's Solution"
 [W004]: https://github.com/wheat779/Project-Euler/blob/master/04.cpp "wheat779's Solution"
@@ -177,3 +185,7 @@ This time [wheat779](https://github.com/wheat779) and I shall battle to the **bo
 [E049]: http://projecteuler.net/index.php?section=problems&id=49 "Project Euler Problem"
 [E050]: http://projecteuler.net/index.php?section=problems&id=50 "Project Euler Problem"
 [E051]: http://projecteuler.net/index.php?section=problems&id=51 "Project Euler Problem"
+[E052]: http://projecteuler.net/index.php?section=problems&id=52 "Project Euler Problem"
+[E053]: http://projecteuler.net/index.php?section=problems&id=53 "Project Euler Problem"
+[E055]: http://projecteuler.net/index.php?section=problems&id=55 "Project Euler Problem"
+[E056]: http://projecteuler.net/index.php?section=problems&id=56 "Project Euler Problem"

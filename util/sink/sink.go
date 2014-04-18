@@ -46,6 +46,7 @@ func FactorialBigInt(num int64) *big.Int {
 	return result
 }
 
+// SumBigDigits sums each of the digits of a big.Int
 func SumBigDigits(n *big.Int) int {
 	mod, sum, zero := big.NewInt(0), big.NewInt(0), big.NewInt(0)
 	ten := big.NewInt(10)

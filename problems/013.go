@@ -1,8 +1,7 @@
 /*
 Problem 13: Large Sum
-Work out the first ten digits of the sum of the following one-hundred 50-digit numbers.
-	See nums slice below.
-Answer: 5537376230
+
+Work out the first ten digits of the sum of the following one-hundred 50-digit numbers: [nums]
 */
 
 package problems

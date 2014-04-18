@@ -3,13 +3,17 @@ Problem 20: Factorial Digit Sum
 n! means n × (n − 1) × ... × 3 × 2 × 1
 For example, 10! = 10 × 9 × ... × 3 × 2 × 1 = 3628800,
 and the sum of the digits in the number 10! is 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27.
+
 Find the sum of the digits in the number 100!
-Answer: 648
 */
 
 package problems
 
-import "math/big"
+import (
+	"math/big"
+
+	"github.com/zolrath/euler/util/sink"
+)
 
 const ANSWER_020 = 648
 
@@ -21,10 +25,7 @@ func factorialInt(num int64) *big.Int {
 	return result
 }
 
-// Uses sumBigDigits from 016.go
-// TODO: Move reused/duplicated functions into util.
-
 func Euler020() int {
-	sum := sumBigDigits(factorialInt(100))
+	sum := sink.SumBigDigits(factorialInt(100))
 	return sum
 }

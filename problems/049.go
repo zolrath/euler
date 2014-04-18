@@ -1,9 +1,12 @@
 /*
 Problem 49: Prime Permutations
 The arithmetic sequence, 1487, 4817, 8147, in which each of the terms increases by 3330, is unusual in two ways:
-(i) each of the three terms are prime, and, (ii) each of the 4-digit numbers are permutations of one another.
+(i) each of the three terms are prime, and,
+(ii) each of the 4-digit numbers are permutations of one another.
+
 There are no arithmetic sequences made up of three 1-, 2-, or 3-digit primes, exhibiting this property,
 but there is one other 4-digit increasing sequence.
+
 What 12-digit number do you form by concatenating the three terms in this sequence?
 */
 
@@ -47,6 +50,7 @@ func findIncreasing(nums []int) int {
 func Euler049() int {
 	pl := primes.Sieve(10000)
 	pm := primes.SieveMap(100000)
+	// Start at first 4 digit prime.
 	for i := 168; i < len(pl); i++ {
 		perms := permute.UniqInts(pl[i])
 		if perms[0] == 1478 {

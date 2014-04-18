@@ -71,6 +71,10 @@ func main() {
 
 	problemList[50] = problems.Euler050
 	problemList[51] = problems.Euler051
+	problemList[52] = problems.Euler052
+	problemList[53] = problems.Euler053
+	problemList[55] = problems.Euler055
+	problemList[56] = problems.Euler056
 
 	if *pFlag != 0 {
 		if _, ok := problemList[*pFlag]; !ok {
