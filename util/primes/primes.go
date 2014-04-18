@@ -97,6 +97,15 @@ func IsPrime(n int, primeMap map[int]bool) bool {
 	return true
 }
 
+func AllArePrime(nums []int, primeMap map[int]bool) bool {
+	for _, v := range nums {
+		if !IsPrime(v, primeMap) {
+			return false
+		}
+	}
+	return true
+}
+
 // PrimeFactors turns a map of the prime factors of n.
 // Each key represents a prime factor.
 // Each value represents the number of times the prime factors into n.
@@ -113,30 +122,4 @@ func PrimeFactors(n int) map[int]int {
 		pfs[n] = 1
 	}
 	return pfs
-}
-
-func PrimeFactors2(n int, primeList []int) (map[int]int, error) {
-	pfs := map[int]int{}
-	max := int(math.Sqrt(float64(n)))
-
-	if primeList == nil {
-		primeList = Sieve(max)
-	}
-
-	for i := 0; i < len(primeList); {
-		v := primeList[i]
-		switch {
-		case n%v == 0:
-			n = n / v
-			pfs[v] = pfs[v] + 1
-		default:
-			i++
-		}
-	}
-
-	if n > 1 {
-		pfs[n] = 1
-	}
-
-	return pfs, nil
 }

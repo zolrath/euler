@@ -11,7 +11,7 @@ Answer: 45228
 
 package problems
 
-import "strconv"
+import "github.com/zolrath/euler/util/sink"
 
 const ANSWER_032 = 45228
 
@@ -30,21 +30,21 @@ func combine(a, b, c int) int {
 }
 
 func isPandigital(n int) bool {
-	nums := [10]int{}
-	l := len(strconv.Itoa(n))
+	l := sink.IntLen(n)
 	// For this problem we want all 9
 	if l != 9 {
 		return false
 	}
+	nums := [10]int{}
 	for n > 0 {
-		nums[n%10] = 1
+		dig := n % 10
+		if nums[dig] == 1 || dig == 0 {
+			return false
+		}
+		nums[dig] = 1
 		n /= 10
 	}
-	numsIncluded := 0
-	for i := 1; i <= l; i++ {
-		numsIncluded += nums[i]
-	}
-	return numsIncluded == l
+	return true
 }
 
 func Euler032() int {

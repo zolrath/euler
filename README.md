@@ -48,6 +48,23 @@ This time [wheat779](https://github.com/wheat779) and I shall battle to the **bo
 | [033][E033]     | [      899968 ns][G033] |                        |
 | [034][E034]     | [   10_195825 ns][G034] |                        |
 | [035][E035]     | [  111_228697 ns][G035] |                        |
+| [036][E036]     | [   35_503199 ns][G036] |                        |
+| [037][E037]     | [   90_107000 ns][G037] |                        |
+| [038][E038]     | [      357653 ns][G038] |                        |
+| [039][E039]     | [   70_786829 ns][G039] |                        |
+| [040][E040]     | [   43_780372 ns][G040] |                        |
+|   **Problem**   |       **Go Time**       |     **Wheat Time**     |
+| [041][E041]     | [  287_495898 ns][G041] |                        |
+| [042][E042]     | [      494957 ns][G042] |                        |
+| [043][E043]     | [  939_620628 ns][G043] |                        |
+| [044][E044]     | [  119_776442 ns][G044] |                        |
+| [045][E045]     | [    1_475734 ns][G045] |                        |
+| [046][E046]     | [    5_024359 ns][G046] |                        |
+| [047][E047]     | [  430_231179 ns][G047] |                        |
+| [048][E048]     | [    3_194064 ns][G048] |                        |
+| [049][E049]     | [    6_131664 ns][G049] |                        |
+| [050][E050]     | [   78_783501 ns][G050] |                        |
+| [051][E051]     | [   69_399747 ns][G051] |                        |
 
 [G001]: /problems/001.go "Go Solution Source"
 [G002]: /problems/002.go "Go Solution Source"
@@ -84,6 +101,22 @@ This time [wheat779](https://github.com/wheat779) and I shall battle to the **bo
 [G033]: /problems/033.go "Go Solution Source"
 [G034]: /problems/034.go "Go Solution Source"
 [G035]: /problems/035.go "Go Solution Source"
+[G036]: /problems/036.go "Go Solution Source"
+[G037]: /problems/037.go "Go Solution Source"
+[G038]: /problems/038.go "Go Solution Source"
+[G039]: /problems/039.go "Go Solution Source"
+[G040]: /problems/040.go "Go Solution Source"
+[G041]: /problems/041.go "Go Solution Source"
+[G042]: /problems/042.go "Go Solution Source"
+[G043]: /problems/043.go "Go Solution Source"
+[G044]: /problems/044.go "Go Solution Source"
+[G045]: /problems/045.go "Go Solution Source"
+[G046]: /problems/046.go "Go Solution Source"
+[G047]: /problems/047.go "Go Solution Source"
+[G048]: /problems/048.go "Go Solution Source"
+[G049]: /problems/049.go "Go Solution Source"
+[G050]: /problems/050.go "Go Solution Source"
+[G051]: /problems/051.go "Go Solution Source"
 
 [W003]: https://github.com/wheat779/Project-Euler/blob/master/03.cpp "wheat779's Solution"
 [W004]: https://github.com/wheat779/Project-Euler/blob/master/04.cpp "wheat779's Solution"
@@ -128,3 +161,19 @@ This time [wheat779](https://github.com/wheat779) and I shall battle to the **bo
 [E033]: http://projecteuler.net/index.php?section=problems&id=33 "Project Euler Problem"
 [E034]: http://projecteuler.net/index.php?section=problems&id=34 "Project Euler Problem"
 [E035]: http://projecteuler.net/index.php?section=problems&id=35 "Project Euler Problem"
+[E036]: http://projecteuler.net/index.php?section=problems&id=36 "Project Euler Problem"
+[E037]: http://projecteuler.net/index.php?section=problems&id=37 "Project Euler Problem"
+[E038]: http://projecteuler.net/index.php?section=problems&id=38 "Project Euler Problem"
+[E039]: http://projecteuler.net/index.php?section=problems&id=39 "Project Euler Problem"
+[E040]: http://projecteuler.net/index.php?section=problems&id=40 "Project Euler Problem"
+[E041]: http://projecteuler.net/index.php?section=problems&id=41 "Project Euler Problem"
+[E042]: http://projecteuler.net/index.php?section=problems&id=42 "Project Euler Problem"
+[E043]: http://projecteuler.net/index.php?section=problems&id=43 "Project Euler Problem"
+[E044]: http://projecteuler.net/index.php?section=problems&id=44 "Project Euler Problem"
+[E045]: http://projecteuler.net/index.php?section=problems&id=45 "Project Euler Problem"
+[E046]: http://projecteuler.net/index.php?section=problems&id=46 "Project Euler Problem"
+[E047]: http://projecteuler.net/index.php?section=problems&id=47 "Project Euler Problem"
+[E048]: http://projecteuler.net/index.php?section=problems&id=48 "Project Euler Problem"
+[E049]: http://projecteuler.net/index.php?section=problems&id=49 "Project Euler Problem"
+[E050]: http://projecteuler.net/index.php?section=problems&id=50 "Project Euler Problem"
+[E051]: http://projecteuler.net/index.php?section=problems&id=51 "Project Euler Problem"

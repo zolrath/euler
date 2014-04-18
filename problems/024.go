@@ -11,12 +11,12 @@ Answer: 2783915460
 
 package problems
 
-import "github.com/zolrath/euler/util/sink"
+import "github.com/zolrath/euler/util/permute"
 
 const ANSWER_024 = 2783915460
 
 func Euler024() int {
-	return sink.LexiIntPermute(1234567890, 1000000-1)
+	return permute.LexiIntPermute(1234567890, 1000000-1)
 }
 
 // func lexiPermute(nums []byte, perms int) int {

@@ -21,7 +21,7 @@ func sumFactorials(nums []int) int {
 func Euler034() int {
 	var sum int
 	for i := int(3); i < 50000; i++ {
-		digits := sink.GetDigits(i)
+		digits := sink.SplitDigits(i)
 		sumf := sumFactorials(digits)
 		if sumf == i {
 			sum += i

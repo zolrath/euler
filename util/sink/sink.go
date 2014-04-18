@@ -3,7 +3,6 @@ package sink
 import (
 	"math"
 	"math/big"
-	"sort"
 	"strings"
 
 	"github.com/zolrath/euler/util/primes"
@@ -57,12 +56,21 @@ func SumBigDigits(n *big.Int) int {
 	return int(sum.Int64())
 }
 
-func IntLength(n int) int {
-	return int(math.Log10(float64(n))) + 1
+func Int64Len(n int64) int64 {
+	return int64(math.Log10(float64(n))) + 1
 }
 
-func GetDigits(n int) []int {
-	nLen := IntLength(n)
+func IntLen(n int) int {
+	length := 0
+	for n > 0 {
+		length++
+		n /= 10
+	}
+	return length
+}
+
+func SplitDigits(n int) []int {
+	nLen := IntLen(n)
 	digits := make([]int, nLen)
 	for nLen--; n > 0; nLen-- {
 		dig := n % 10
@@ -72,89 +80,16 @@ func GetDigits(n int) []int {
 	return digits
 }
 
-func LexiStringPermute(in string, perms int) string {
-	input := strings.Split(in, "")
-	for p := 0; p < perms; p++ {
-		var pivot int
-		end := len(input) - 1
-		// Find pivot, cell in which the cell preceeding it is higher in value.
-		for i := end; i > 0; i-- {
-			if input[i-1] < input[i] {
-				pivot = i - 1
-				break
-			}
-		}
-		// Find first number before pivot which is higher than it.
-		for i := end; i > pivot; i-- {
-			if input[i] > input[pivot] {
-				input[i], input[pivot] = input[pivot], input[i]
-				pivot++
-				break
-			}
-		}
-		for i := end; pivot < i; {
-			input[i], input[pivot] = input[pivot], input[i]
-			pivot++
-			i--
-		}
+func JoinDigits(nums []int) int {
+	num := 0
+	for _, d := range nums {
+		num = (num * 10) + d
 	}
-	return strings.Join(input, "")
-}
-
-func LexiIntPermute(num int, perms int) int {
-	nums := GetDigits(num)
-	sort.Ints(nums)
-	for p := 0; p < perms; p++ {
-		var pivot int
-		end := len(nums) - 1
-		// Find pivot, cell in which the cell preceeding it is higher in value.
-		for i := end; i > 0; i-- {
-			if nums[i-1] < nums[i] {
-				pivot = i - 1
-				break
-			}
-		}
-		// Find first number before pivot which is higher than it.
-		for i := end; i > pivot; i-- {
-			if nums[i] > nums[pivot] {
-				nums[i], nums[pivot] = nums[pivot], nums[i]
-				pivot++
-				break
-			}
-		}
-		for i := end; pivot < i; {
-			nums[i], nums[pivot] = nums[pivot], nums[i]
-			pivot++
-			i--
-		}
-	}
-	permutation := 0
-	for _, v := range nums {
-		permutation = (permutation * 10) + v
-	}
-	return permutation
-}
-
-func GetStringPermutations(in string) []string {
-	permCount := FactorialInt(len(in))
-	permutations := make([]string, permCount)
-	for i := 0; i < permCount; i++ {
-		permutations[i] = LexiStringPermute(in, i)
-	}
-	return permutations
-}
-
-func GetIntPermutations(in int) []int {
-	permCount := FactorialInt(IntLength(in))
-	permutations := make([]int, permCount)
-	for i := 0; i < permCount; i++ {
-		permutations[i] = LexiIntPermute(in, i)
-	}
-	return permutations
+	return num
 }
 
 func GetIntRotations(in int) []int {
-	inLen := IntLength(in)
+	inLen := IntLen(in)
 	rotations := make([]int, inLen)
 	for i := 0; i < inLen; i++ {
 		rotations[i] = RotateInt(in, i)
@@ -199,6 +134,28 @@ func ReverseInt(num int) (reverse int) {
 	return reverse
 }
 
+func ReverseString(s string) string {
+	runes := []rune(s)
+	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
+		runes[i], runes[j] = runes[j], runes[i]
+	}
+	return string(runes)
+}
+
+func IsPalindromeInt(num int) bool {
+	return num == ReverseInt(num)
+}
+
+func IsPalindromeString(text string) bool {
+	return text == ReverseString(text)
+}
+
+func ConcatInt(a, b int) int {
+	l := IntLen(b)
+	a *= int(math.Pow10(l))
+	return a + b
+}
+
 // Prime Factorization to the rescue!
 // σ(n) is the sum of divisors of a natural number.
 // σ(p^a) = (p^a+1 − 1)/(p − 1).
@@ -210,4 +167,33 @@ func ProperDivisorSum(n int) int {
 		sum *= (int(math.Pow(float64(p), float64(e+1))) - 1) / (p - 1)
 	}
 	return sum - n
+}
+
+// IsPandigital requires a number have all numbers up to len(n)
+func IsPandigital(n int) bool {
+	l := IntLen(n)
+	nums := make([]int, l+1)
+	for n > 0 {
+		dig := n % 10
+		if dig == 0 {
+			l--
+		}
+		if dig > l || nums[dig] == 1 {
+			return false
+		}
+		nums[dig] = 1
+		n /= 10
+	}
+	return true
+}
+
+func numberOfTrailingZeros(i int64) int64 {
+	zerosOnRightModLookup := []int64{32, 0, 1, 26, 2, 23, 27, 0, 3, 16, 24, 30, 28, 11, 0, 13, 4, 7, 17,
+		0, 25, 22, 31, 15, 29, 10, 12, 6, 0, 21, 14, 9, 5, 20, 8, 19, 18}
+	return zerosOnRightModLookup[(i&-i)%37]
+}
+
+func IsPerfectSquare(n int) bool {
+	rt := int(math.Sqrt(float64(n)))
+	return rt*rt == n
 }
