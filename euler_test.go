@@ -77,8 +77,12 @@ func TestEuler050(t *testing.T) { testHarness(problems.Euler050, problems.ANSWER
 func TestEuler051(t *testing.T) { testHarness(problems.Euler051, problems.ANSWER_051, t) }
 func TestEuler052(t *testing.T) { testHarness(problems.Euler052, problems.ANSWER_052, t) }
 func TestEuler053(t *testing.T) { testHarness(problems.Euler053, problems.ANSWER_053, t) }
+
 func TestEuler055(t *testing.T) { testHarness(problems.Euler055, problems.ANSWER_055, t) }
 func TestEuler056(t *testing.T) { testHarness(problems.Euler056, problems.ANSWER_056, t) }
+
+func TestEuler092(t *testing.T) { testHarness(problems.Euler092, problems.ANSWER_092, t) }
+func TestEuler095(t *testing.T) { testHarness(problems.Euler095, problems.ANSWER_095, t) }
 
 func BenchmarkEuler001(b *testing.B) { benchmarkHarness(problems.Euler001, b) }
 func BenchmarkEuler002(b *testing.B) { benchmarkHarness(problems.Euler002, b) }
@@ -138,5 +142,10 @@ func BenchmarkEuler050(b *testing.B) { benchmarkHarness(problems.Euler050, b) }
 func BenchmarkEuler051(b *testing.B) { benchmarkHarness(problems.Euler051, b) }
 func BenchmarkEuler052(b *testing.B) { benchmarkHarness(problems.Euler052, b) }
 func BenchmarkEuler053(b *testing.B) { benchmarkHarness(problems.Euler053, b) }
+
 func BenchmarkEuler055(b *testing.B) { benchmarkHarness(problems.Euler055, b) }
 func BenchmarkEuler056(b *testing.B) { benchmarkHarness(problems.Euler056, b) }
+
+func BenchmarkEuler092(b *testing.B) { benchmarkHarness(problems.Euler092, b) }
+func BenchmarkEuler095(b *testing.B) { benchmarkHarness(problems.Euler095, b) }
+

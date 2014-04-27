@@ -62,6 +62,31 @@ func Sieve(limit int) []int {
 	return primes
 }
 
+// PrimeCompositeSieve uses a Sieve of Eratosthenes, generating the prime and composite numbers less than the limit.
+func PrimeCompositeSieve(limit int) (primes, composites []int) {
+	sieve := make([]int, limit+1)
+	primes = []int{2}
+	composites = make([]int, 0)
+	for i := 2; i <= limit; i += 2 {
+		sieve[i] = 1
+	}
+	for i := 3; i <= int(math.Sqrt(float64(limit))); i += 2 {
+		if sieve[i] == 0 {
+			for j := i * i; j <= limit; j += i {
+				sieve[j] = 1
+			}
+		}
+	}
+	for i := 3; i <= limit; i++ {
+		if sieve[i] == 0 {
+			primes = append(primes, i)
+		} else {
+			composites = append(composites, i)
+		}
+	}
+	return primes, composites
+}
+
 // SieveMap uses a Sieve of Eratosthenes, generating the prime numbers less than the limit.
 // It returns a map for fast isPrime checking.
 func SieveMap(limit int) map[int]bool {
@@ -110,9 +135,9 @@ func AllArePrime(nums []int, primeMap map[int]bool) bool {
 // Each key represents a prime factor.
 // Each value represents the number of times the prime factors into n.
 func PrimeFactors(n int) map[int]int {
-	pfs := map[int]int{}
+	pfs := make(map[int]int)
 	max := int(math.Sqrt(float64(n)))
-	for i := 2; i < max; i++ {
+	for i := 2; i <= max; i++ {
 		for n%i == 0 {
 			n = n / i
 			pfs[i] = pfs[i] + 1

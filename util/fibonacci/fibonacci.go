@@ -31,12 +31,11 @@ func IntGenerator() func() int {
 
 // BigIntGenerator returns a function which returns the next fibonacci number when called.
 func BigIntGenerator() func() *big.Int {
-	a, b, ans, tmp := big.NewInt(0), big.NewInt(1), big.NewInt(0), big.NewInt(0)
+	a, b, ans := big.NewInt(0), big.NewInt(1), big.NewInt(0)
 	return func() *big.Int {
-		tmp.Set(b)
 		ans.Set(a)
-		b.Add(a, b)
-		a.Set(tmp)
+		a.Set(b)
+		b.Add(ans, b)
 		return ans
 	}
 }

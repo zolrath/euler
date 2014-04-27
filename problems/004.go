@@ -12,15 +12,16 @@ import "github.com/zolrath/euler/util/sink"
 const ANSWER_004 = 906609
 
 func Euler004() int {
-	var result, min int
+	var largest int
 
+	// By bounding j to less than i we don't perform repeated multiplication.
 	for i := 100; i < 1000; i++ {
 		for j := 100; j < i; j++ {
-			result = i * j
-			if sink.IsPalindromeInt(result) && result > min {
-				min = result
+			result := i * j
+			if sink.IsPalindromeInt(result) && result > largest {
+				largest = result
 			}
 		}
 	}
-	return min
+	return largest
 }

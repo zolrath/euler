@@ -16,16 +16,16 @@ This time [wheat779](https://github.com/wheat779) and I shall battle to the **bo
 | [002][E002]     | [          47 ns][G002] |                        |
 | [003][E003]     | [       28358 ns][G003] | [          ? ns][W003] |
 | [004][E004]     | [   14_752804 ns][G004] | [          ? ns][W004] |
-| [005][E005]     | [        1058 ns][G005] |                        |
-| [006][E006]     | [           6 ns][G006] |                        |
-| [007][E007]     | [   41_060043 ns][G007] | [          ? ns][W007] |
+| [005][E005]     | [        1058 ns][G005] | [          ? ns][W005] |
+| [006][E006]     | [           6 ns][G006] | [          ? ns][W006] |
+| [007][E007]     | [   38_313344 ns][G007] | [          ? ns][W007] |
 | [008][E008]     | [        4227 ns][G008] | [          ? ns][W008] |
 | [009][E009]     | [      166712 ns][G009] | [          ? ns][W009] |
 | [010][E010]     | [   49_120659 ns][G010] | [          ? ns][W010] |
 | [011][E011]     | [       15383 ns][G011] | [          ? ns][W011] |
-| [012][E012]     | [  516_877686 ns][G012] |                        |
+| [012][E012]     | [  482_408587 ns][G012] |                        |
 | [013][E013]     | [        1034 ns][G013] |                        |
-| [014][E014]     | [  611_661311 ns][G014] |                        |
+| [014][E014]     | [  598_777804 ns][G014] |                        |
 | [015][E015]     | [         144 ns][G015] |                        |
 | [016][E016]     | [       96820 ns][G016] |                        |
 | [017][E017]     | [       11985 ns][G017] |                        |
@@ -36,7 +36,7 @@ This time [wheat779](https://github.com/wheat779) and I shall battle to the **bo
 | [021][E021]     | [   18_884504 ns][G021] |                        |
 | [022][E022]     | [    2_705806 ns][G022] |                        |
 | [023][E023]     | [   53_856577 ns][G023] |                        |
-| [024][E024]     | [   10_162504 ns][G024] |                        |
+| [024][E024]     | [    8_728943 ns][G024] |                        |
 | [025][E025]     | [   53_991616 ns][G025] |                        |
 | [026][E026]     | [   20_654512 ns][G026] |                        |
 | [027][E027]     | [   40_962985 ns][G027] |                        |
@@ -45,16 +45,16 @@ This time [wheat779](https://github.com/wheat779) and I shall battle to the **bo
 | [030][E030]     | [   97_401449 ns][G030] |                        |
 | [031][E031]     | [        1958 ns][G031] |                        |
 | [032][E032]     | [   19_797428 ns][G032] |                        |
-| [033][E033]     | [      899968 ns][G033] |                        |
+| [033][E033]     | [      709939 ns][G033] |                        |
 | [034][E034]     | [   10_195825 ns][G034] |                        |
-| [035][E035]     | [  111_228697 ns][G035] |                        |
+| [035][E035]     | [  106_726652 ns][G035] |                        |
 | [036][E036]     | [   35_503199 ns][G036] |                        |
 | [037][E037]     | [   90_107000 ns][G037] |                        |
 | [038][E038]     | [      278589 ns][G038] |                        |
 | [039][E039]     | [   70_786829 ns][G039] |                        |
 | [040][E040]     | [   43_780372 ns][G040] |                        |
 |   **Problem**   |       **Go Time**       |     **Wheat Time**     |
-| [041][E041]     | [  287_495898 ns][G041] |                        |
+| [041][E041]     | [  273_099007 ns][G041] |                        |
 | [042][E042]     | [      494957 ns][G042] |                        |
 | [043][E043]     | [  939_620628 ns][G043] |                        |
 | [044][E044]     | [  119_776442 ns][G044] |                        |
@@ -69,6 +69,9 @@ This time [wheat779](https://github.com/wheat779) and I shall battle to the **bo
 | [053][E053]     | [    1_198651 ns][G053] |                        |
 | [055][E055]     | [    3_792933 ns][G055] |                        |
 | [056][E056]     | [  166_651887 ns][G056] |                        |
+|   **Problem**   |       **Go Time**       |     **Wheat Time**     |
+| [092][E092]     | [ 6558_467226 ns][G092] |                        |
+| [095][E095]     | [ 2586_209907 ns][G095] |                        |
 
 [G001]: /problems/001.go "Go Solution Source"
 [G002]: /problems/002.go "Go Solution Source"
@@ -125,9 +128,14 @@ This time [wheat779](https://github.com/wheat779) and I shall battle to the **bo
 [G053]: /problems/053.go "Go Solution Source"
 [G055]: /problems/055.go "Go Solution Source"
 [G056]: /problems/056.go "Go Solution Source"
+[G092]: /problems/092.go "Go Solution Source"
+[G095]: /problems/095.go "Go Solution Source"
 
 [W003]: https://github.com/wheat779/Project-Euler/blob/master/03.cpp "wheat779's Solution"
 [W004]: https://github.com/wheat779/Project-Euler/blob/master/04.cpp "wheat779's Solution"
+[W005]: https://github.com/wheat779/Project-Euler/blob/master/05.cpp "wheat779's Solution"
+[W005]: https://github.com/wheat779/Project-Euler/blob/master/06.cpp "wheat779's Solution"
+[W006]: https://github.com/wheat779/Project-Euler/blob/master/06.cpp "wheat779's Solution"
 [W007]: https://github.com/wheat779/Project-Euler/blob/master/07.cpp "wheat779's Solution"
 [W008]: https://github.com/wheat779/Project-Euler/blob/master/08.cpp "wheat779's Solution"
 [W009]: https://github.com/wheat779/Project-Euler/blob/master/09.cpp "wheat779's Solution"
@@ -189,3 +197,5 @@ This time [wheat779](https://github.com/wheat779) and I shall battle to the **bo
 [E053]: http://projecteuler.net/index.php?section=problems&id=53 "Project Euler Problem"
 [E055]: http://projecteuler.net/index.php?section=problems&id=55 "Project Euler Problem"
 [E056]: http://projecteuler.net/index.php?section=problems&id=56 "Project Euler Problem"
+[E092]: http://projecteuler.net/index.php?section=problems&id=92 "Project Euler Problem"
+[E095]: http://projecteuler.net/index.php?section=problems&id=95 "Project Euler Problem"

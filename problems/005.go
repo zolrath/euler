@@ -11,6 +11,7 @@ import "github.com/zolrath/euler/util/sink"
 
 const ANSWER_005 = 232792560
 
+// multiLCM returns the Least Common Multiple of all of the numbers in a given slice of ints.
 func multiLCM(nums []int) int {
 	m := nums[0]
 	for i := 1; i < len(nums)-1; i++ {

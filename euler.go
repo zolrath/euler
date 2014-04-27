@@ -76,6 +76,9 @@ func main() {
 	problemList[55] = problems.Euler055
 	problemList[56] = problems.Euler056
 
+	problemList[92] = problems.Euler092
+	problemList[95] = problems.Euler095
+
 	if *pFlag != 0 {
 		if _, ok := problemList[*pFlag]; !ok {
 			fmt.Printf("Problem %03d hasn't been completed yet don'tcha know!\n", *pFlag)

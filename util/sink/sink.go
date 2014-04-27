@@ -22,6 +22,20 @@ func LCM(a, b int) int {
 	return a * b / GCD(a, b)
 }
 
+func LCMu64(a, b uint64) uint64 {
+	return a * b / GCDu64(a, b)
+}
+
+func GCDu64(a, b uint64) uint64 {
+	if a < b {
+		a, b = b, a
+	}
+	if a%b == 0 {
+		return b
+	}
+	return GCDu64(b, a%b)
+}
+
 func Factorial(n float64) float64 {
 	result := float64(1)
 	for i := float64(2); i <= n; i++ {
@@ -57,11 +71,29 @@ func SumBigDigits(n *big.Int) int {
 	return int(sum.Int64())
 }
 
+func SumDigits(n int) int {
+	sum := 0
+	for n > 0 {
+		sum += n % 10
+		n /= 10
+	}
+	return sum
+}
+
 func Int64Len(n int64) int64 {
 	return int64(math.Log10(float64(n))) + 1
 }
 
 func IntLen(n int) int {
+	length := 0
+	for n > 0 {
+		length++
+		n /= 10
+	}
+	return length
+}
+
+func UInt64Len(n uint64) int {
 	length := 0
 	for n > 0 {
 		length++
@@ -157,6 +189,24 @@ func ConcatInt(a, b int) int {
 	return a + b
 }
 
+// IsSubsequence: "eo" is a subsequence of "hello". Must be in the same order, but not necessarily sequential.
+func IsSubsequence(word, sub string) bool {
+	wordLen, subLen := len(word), len(sub)
+	if subLen > wordLen {
+		return false
+	}
+	subi := 0
+	for wordi := 0; wordi < wordLen; wordi++ {
+		if sub[subi] == word[wordi] {
+			subi++
+		}
+		if subi == subLen {
+			return true
+		}
+	}
+	return false
+}
+
 // Prime Factorization to the rescue!
 // σ(n) is the sum of divisors of a natural number.
 // σ(p^a) = (p^a+1 − 1)/(p − 1).
@@ -168,6 +218,19 @@ func ProperDivisorSum(n int) int {
 		sum *= (int(math.Pow(float64(p), float64(e+1))) - 1) / (p - 1)
 	}
 	return sum - n
+}
+
+// PDSCacheTo creates an array of all of the Proper Divisor Sums until the given limit.
+func PDSCacheTo(limit int) []int {
+	pdsCache := make([]int, limit)
+	// Use a sieve to generate proper divisor sums.
+	// At 2 find all numbers divisible by 2, add 2 to the sum. Move to 3. Repeat!
+	for i := 1; i < limit; i++ {
+		for j := i * 2; j < limit; j += i {
+			pdsCache[j] += i
+		}
+	}
+	return pdsCache
 }
 
 // IsPandigital requires a number have all numbers up to len(n)

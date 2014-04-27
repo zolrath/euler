@@ -13,7 +13,7 @@ package problems
 const ANSWER_009 = 31875000
 
 func findPyTrip(sum int) int {
-	for a := 1; a < (sum)/3; a++ {
+	for a := 1; a < sum/3; a++ {
 		for b := a + 1; b < (sum-a)/2; b++ {
 			c := sum - a - b
 			if c*c == a*a+b*b {
